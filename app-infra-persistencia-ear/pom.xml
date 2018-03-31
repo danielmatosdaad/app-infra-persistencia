@@ -13,16 +13,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<artifactId>app-infra-persistencia-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>app-infra-persistencia-ear</name>
+
 	<parent>
-		<artifactId>app-smart-business</artifactId>
-		<groupId>br.com.app.smart.business</groupId>
+		<groupId>br.app.infra.persistencia</groupId>
+		<artifactId>app-infra-persistencia</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
-	<artifactId>app-smart-business-infra-persistencia-ear</artifactId>
-	<packaging>ear</packaging>
-
-	<name>app-smart-business-infra-persistencia-ear</name>
 
 	<url>http://jboss.org/jbossas</url>
 	<licenses>
@@ -51,8 +50,8 @@
 					<fileNameMapping>no-version</fileNameMapping>
 					<modules>
 						<ejbModule>
-							<groupId>br.com.app.smart.business</groupId>
-							<artifactId>app-smart-business-infra-persistencia</artifactId>
+							<groupId>br.app.infra.persistencia</groupId>
+							<artifactId>app-infra-persistencia-ejb</artifactId>
 						</ejbModule>
 					</modules>
 				</configuration>
@@ -97,18 +96,33 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>br.com.app.smart.business</groupId>
+			<groupId>br.app.infra.persistencia</groupId>
 			<artifactId>
-				app-smart-business-infra-persistencia
+				app-infra-persistencia-ejb
 			</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>br.com.app.smart.business</groupId>
-			<artifactId>app-smart-business-common</artifactId>
+			<groupId>br.app.infra.persistencia</groupId>
+			<artifactId>
+				app-infra-persistencia-integracao
+			</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>br.app.infra.persistencia</groupId>
+			<artifactId>
+				app-infra-persistencia-api
+			</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>br.app.infra.base</groupId>
+			<artifactId>app-infra-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
